@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Healthcare System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Patient Sign Up</h2>
+            <p class="tagline">Join us and take control of your health!</p>
+
+            <form onsubmit="return signUp(event)">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Enter your age" required>
+
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" placeholder="Enter your gender" required>
+
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" placeholder="Enter your contact number" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a strong password" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+
+            <!-- Login Link -->
+            <div class="extra-links">
+                <p>Already have an account? <a href="patient-login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function signUp(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form values
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const contact = document.getElementById("contact").value;
+    const email = document.getElementById("email").value;
+
+    // Store in localStorage
+    localStorage.setItem("patientName", name);
+    localStorage.setItem("patientAge", age);
+    localStorage.setItem("patientGender", gender);
+    localStorage.setItem("patientContact", contact);
+    localStorage.setItem("patientEmail", email);
+
+    // Redirect to dashboard
+    window.location.href = "patient-login.html";
+}
+    </script>
+</body>
+</html>

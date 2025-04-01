@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="styles_patientdashboard.css">
+</head>
+<body onload="loadUserData()">
+    <div class="container">
+        <h1>Patient Dashboard</h1>
+
+        <!-- Profile Section -->
+        <div class="card">
+            <h2>Profile</h2>
+            <p><strong>Name:</strong> <span id="displayName">Not Set</span></p>
+            <p><strong>Age:</strong> <span id="displayAge">Not Set</span></p>
+            <p><strong>Gender:</strong> <span id="displayGender">Not Set</span></p>
+            <p><strong>Email:</strong> <span id="displayEmail">Not Set</span></p>
+            <p><strong>Phone:</strong> <span id="displayContact">Not Set</span></p>
+        </div>
+
+        <!-- Appointment Booking Section -->
+        <div class="card">
+            <h2>Book an Appointment</h2>
+            <label>Select Date:</label>
+            <input type="date">
+            <label>Select Doctor:</label>
+            <select>
+                <option>Dr. Arpit Bhardwaj</option>
+                <option>Dr. Sneh Gupta</option>
+                <option>Dr. Shashank Mathur</option>
+                <option>Dr. Julima Jain</option>
+            </select>
+            <button class="btn">Book Appointment</button>
+        </div>
+
+        <!-- Medical History Section -->
+        <div class="card">
+            <h2>Medical History</h2>
+            <ul>
+                <li>Consultation with Dr. Arpit - 2025-02-10</li>
+                <li>Blood Test - 2025-01-25</li>
+                <li>Annual Checkup - 2024-12-05</li>
+            </ul>
+        </div>
+
+        <a href="patient_login.html" class="logout-btn" onclick="logout()">Logout</a>
+    </div>
+
+    <script>
+        function loadUserData() {
+            // Retrieve user data from localStorage
+            document.getElementById("displayName").innerText = localStorage.getItem("patientName") || "Not Set";
+            document.getElementById("displayAge").innerText = localStorage.getItem("patientAge") || "Not Set";
+            document.getElementById("displayGender").innerText = localStorage.getItem("patientGender") || "Not Set";
+            document.getElementById("displayEmail").innerText = localStorage.getItem("patientEmail") || "Not Set";
+            document.getElementById("displayContact").innerText = localStorage.getItem("patientContact") || "Not Set";
+        }
+
+        function logout() {
+            localStorage.clear(); // Clear stored data
+            window.location.href = "signup.html"; // Redirect back to sign-up page
+        }
+    </script>
+</body>
+</html>

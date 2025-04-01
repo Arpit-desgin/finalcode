@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Login | Healthcare System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Patient Login</h2>
+            <form onsubmit="handleLogin(event)">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Forgot Password & Sign Up Links -->
+            <div class="extra-links">
+                <a href="#">Forgot Password?</a>
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Get input values
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Sample user data (Replace this with actual authentication logic)
+            if (email === "S24CSEU2237@bennett.edu.in" && password === "12345") {
+                // Store user data in localStorage (Modify as needed)
+                localStorage.setItem("patientName", "John Doe");
+                localStorage.setItem("patientAge", "30");
+                localStorage.setItem("patientGender", "Male");
+                localStorage.setItem("patientEmail", email);
+                localStorage.setItem("patientContact", "9876543210");
+
+                // Redirect to the patient dashboard
+                window.location.href = "patient_dashboard.html";
+            } else {
+                alert("Invalid email or password. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>

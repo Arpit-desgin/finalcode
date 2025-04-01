@@ -1,0 +1,42 @@
+/* CSS File: styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+.error-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+.error-container h1 {
+    font-size: 80px;
+    color: #ff0000;
+    margin: 0;
+}
+.error-container h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+.error-container p {
+    font-size: 16px;
+    color: #666;
+}
+.home-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.home-button:hover {
+    background: #0056b3;
+}
