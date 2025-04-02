@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="styles_doctordashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Doctor Dashboard</h1>
+
+        <a href="#" class="logout-btn" onclick="logout()">Logout</a>
+        <a href="doctor_appointments.html" class="manage-btn">Manage Appointments</a>
+
+        <!-- Upcoming Appointments Section -->
+        <div class="card">
+            <h2>Upcoming Appointments</h2>
+            <ul>
+                <li>John Doe - March 28, 2025, 10:00 AM</li>
+                <li>Sarah Smith - March 28, 2025, 11:30 AM</li>
+                <li>David Brown - March 29, 2025, 2:00 PM</li>
+            </ul>
+        </div>
+
+        <!-- Manage Patients Section -->
+        <div class="card">
+            <h2>Manage Patients</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john.doe@example.com</td>
+                        <td><button class="btn">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Smith</td>
+                        <td>sarah.smith@example.com</td>
+                        <td><button class="btn">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>David Brown</td>
+                        <td>david.brown@example.com</td>
+                        <td><button class="btn">View Details</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

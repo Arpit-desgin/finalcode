@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointments</title>
+    <link rel="stylesheet" href="styles_appointments.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Appointments</h1>
+
+        <a href="doctor_dashboard.html" class="back-btn">Back to Dashboard</a>
+
+        <!-- Appointments List -->
+        <div class="card">
+            <h2>Pending Appointments</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="appointmentsTable">
+                    <!-- Appointments will be added dynamically here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Sample Appointments Data (Replace this with actual backend data)
+        let appointments = [
+            { id: 1, name: "John Doe", date: "March 28, 2025, 10:00 AM", status: "Pending" },
+            { id: 2, name: "Sarah Smith", date: "March 28, 2025, 11:30 AM", status: "Pending" },
+            { id: 3, name: "David Brown", date: "March 29, 2025, 2:00 PM", status: "Pending" }
+        ];
+
+        // Function to display appointments
+        function loadAppointments() {
+            const tableBody = document.getElementById("appointmentsTable");
+            tableBody.innerHTML = ""; // Clear previous content
+
+            appointments.forEach(appointment => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${appointment.name}</td>
+                    <td>${appointment.date}</td>
+                    <td id="status-${appointment.id}">${appointment.status}</td>
+                    <td>
+                        <button class="accept-btn" onclick="updateStatus(${appointment.id}, 'Accepted')">Accept</button>
+                        <button class="reject-btn" onclick="updateStatus(${appointment.id}, 'Rejected')">Reject</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Function to update appointment status
+        function updateStatus(id, newStatus) {
+            const statusElement = document.getElementById(`status-${id}`);
+            statusElement.textContent = newStatus;
+
+            // Find and update the status in the array
+            const appointment = appointments.find(appt => appt.id === id);
+            if (appointment) {
+                appointment.status = newStatus;
+            }
+        }
+
+        // Load appointments when page loads
+        window.onload = loadAppointments;
+    </script>
+</body>
+</html>
